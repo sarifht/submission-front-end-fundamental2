@@ -16,17 +16,36 @@ main {
 /* Loading Indicator Styles */
 .loadingIndicator {
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-25%);
+  top: 0; /* Mengubah posisi ke atas layar */
+  left: 0;
+  width: 100vw; /* Lebar penuh layar */
+  height: 100vh; /* Tinggi penuh layar */
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Poppins", sans-serif;
+  z-index: 9999; /* Pastikan berada di atas konten lain */
 }
 
-.dots-loader {
-  display: flex;
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.75
+  ); /* Warna hitam dengan transparansi 75% */
+  z-index: -1; /* Agar berada di belakang loading dots */
+}
+
+.dots-loader,
+.text-load {
+  display: relative;
+  z-index: 1;
   align-items: center;
 }
 
@@ -45,6 +64,14 @@ main {
 
 .dot:nth-child(3) {
   animation-delay: 0.6s;
+}
+
+.loadingIndicator {
+  display: none; /* Secara default tidak terlihat */
+}
+
+.loadingIndicator.show {
+  display: flex; /* Tampilkan saat ada class "show" */
 }
 
 @keyframes bounce {
