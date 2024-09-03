@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes App</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Add Tab Browser Icon -->
+    <link rel="icon" href="book-icon.png" type="image/x-icon" />
+
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="src/style/style.css" />
+  </head>
+
+  <body>
+    <!-- Header Content -->
+    <header>
+      <header-bar></header-bar>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <div id="inputNotes">
+        <note-form></note-form>
+      </div>
+      <div id="itemNotes">
+        <note-list></note-list>
+      </div>
+    </main>
+
+    <div class="loadingIndicator" style="display: none">
+      <div class="dots-loader">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <p class="text-load">Tunggu sebentar...</p>
+    </div>
+    <!-- Footer Content -->
+    <footer>
+      <footer-bar></footer-bar>
+    </footer>
+
+    <!--sweetalert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>
